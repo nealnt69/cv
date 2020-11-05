@@ -1,0 +1,97 @@
+.footer_body__item_description_icon {
+  width: 20px;
+  height: 20px;
+  color: #212429;
+}
+
+.footer {
+  background-color: #fff;
+  max-width: 1193.92px;
+  margin: auto;
+  padding: 42px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer_body {
+  display: flex;
+}
+
+.footer_body__item.border_bottom_mobile {
+  margin-right: 24px;
+}
+
+.footer_body__item_title {
+  color: #212429;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 32px 0px;
+}
+
+.footer_body__item_description {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.footer_body__item_description_text {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-left: 12px;
+}
+
+.footer_body__item_description_text_title {
+  font-weight: 700;
+  margin-bottom: 3px;
+  margin: 0px;
+}
+
+.footer_body__item_description_text_content {
+  margin: 0px;
+  margin-top: 4px;
+}
+
+.dmca {
+  height: 50px;
+}
+
+.footer_body__item_description a {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.footer_body__apps {
+  margin-top: 16px;
+  margin-right: 16px;
+}
+
+.footer_body__apps_title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.footer_body__apps_payment {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.footer_body__apps_payment img {
+  height: 50px;
+  border: 1px #eee solid;
+  border-radius: 4px;
+  margin: 0 8px 0 0;
+}
+
+.footer_bottom {
+  max-width: 1193.92px;
+  margin: auto;
+  background-color: #fff;
+  padding-bottom: 16px;
+}
+
+.footer_bottom__left {
+  color: #aaa;
+  font-size: 14px;
+  margin-left: 42px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+  </head>
+  <body>
+    <%- include('header'); -%>
+    <div class="login">
+      <h1>Đăng nhập Kết Nối Việc</h1>
+      <p>
+        Khi Đăng nhập bạn có thể đăng tin, theo dõi, bình luận và đánh giá các
+        tin rao và rất nhiều tính năng hữu ích.
+      </p>
+      <div id="login-google" class="login__modal__block__google">
+        <img
+          class="modal-login__login-with__icon"
+          alt=""
+          src="/images/login/google.svg"
+        />
+        <p class="google">ĐĂNG NHẬP BẰNG GOOGLE</p>
+      </div>
+      <div class="login__modal__block__google">
+        <img
+          class="modal-login__login-with__icon"
+          alt=""
+          src="/images/login/facebook.svg"
+        />
+        <p className="facebook">ĐĂNG NHẬP BẰNG FACEBOOK</p>
+      </div>
+      <p>
+        Khi ấn vào nút Đăng nhập bạn cần đồng ý các Điều khoản và Quy định của
+        Kết Nối Việc.
+      </p>
+    </div>
+    <%- include('footer'); -%>
+  </body>
+
+  <script>
+    const now = new Date();
+    now.setTime(now.getTime() + 30 * 60 * 60 * 1000);
+    document.cookie = `cb_redirect=${
+      document.referrer
+    };expires=${now.toUTCString()};path=/;domain=.ketnoiviec.net;`;
+
+    document.getElementById("login-google").addEventListener("click", () => {
+      window.location.href = "https://graph.ketnoiviec.net/auth/google";
+    });
+  </script>
+</html>

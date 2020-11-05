@@ -1,0 +1,392 @@
+#toolbar-container {
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+
+#toolbar-layout {
+  width: 1193.92px;
+  display: flex;
+  margin: auto;
+  padding: 8px 0px;
+}
+
+.toolbar-block {
+}
+
+.tool-line {
+  width: 1px;
+  background-color: #f1f1f1;
+  margin: 0 16px;
+}
+
+.toolbar-block-row {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.row-align-center {
+  align-items: center;
+}
+
+.row-justify-center {
+  justify-content: center;
+}
+
+.toolbar-block-title {
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 13px;
+}
+
+#toolbar-select-font {
+  width: 140px;
+  z-index: 9999;
+}
+
+#toolbar-select-font-size {
+  width: 60px;
+  z-index: 999;
+}
+
+.toolbar-text-style {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: not-allowed;
+  font-size: 16px;
+  color: #848484;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+
+.toolbar-text-align-style {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: not-allowed;
+  font-size: 16px;
+  color: #848484;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+
+.toolbar-text-align-style:focus {
+  outline: none;
+}
+
+.toolbar-text-style--active {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.toolbar-text-style:focus {
+  outline: none;
+}
+
+#toolbar-text-bold {
+  font-weight: 700;
+}
+
+#toolbar-text-italic {
+  font-style: italic;
+}
+
+#toolbar-text-underline {
+  text-decoration: underline;
+}
+
+.toolbar-text-style:hover:not(.toolbar-text-style--active) {
+  background-color: #f1f1f1;
+}
+
+.toolbar-line-hight-item {
+  color: #848484;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0px 4px;
+}
+
+.toolbar-line-hight-item--active {
+  background-color: #a1a1a1;
+}
+
+.toolbar-line-hight-item--active i {
+  color: #fff;
+}
+
+.toolbar-line-hight-item:hover {
+  background-color: #a1a1a1;
+}
+
+.toolbar-line-hight-item:hover i {
+  color: #fff;
+}
+
+#toolbar-line-hight-small {
+  font-size: 10px;
+}
+#toolbar-line-hight-medium {
+  font-size: 14px;
+}
+#toolbar-line-hight-large {
+  font-size: 20px;
+}
+
+#toolbar-color-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+}
+
+#toolbar-color-picker .pickr {
+  border-radius: 4px;
+  box-shadow: 1px 2px 10px -2px rgba(0, 0, 0, 0.15);
+}
+
+#toolbar-color-picker-val {
+  margin-left: 12px;
+}
+
+#toolbar-color-picker-val .toolbar-block-title {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+#toolbar-color-picker-val-text {
+  color: #848484;
+  font-size: 12px;
+}
+
+.toolbar-language-flag {
+  position: relative;
+  margin: 0px 4px;
+  cursor: pointer;
+}
+
+.toolbar-language-flag img {
+  height: 24px;
+}
+
+.toolbar-language-active {
+  position: absolute;
+  right: -4px;
+  bottom: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0ac224;
+  border: 2px solid #fff;
+}
+
+#toolbar-translate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f1f1f1;
+  padding: 4px;
+  font-size: 13px;
+  color: #848484;
+  cursor: not-allowed;
+}
+
+#toolbar-translate i {
+  margin-right: 8px;
+}
+
+#toolbar-grid {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+#toolbar-grid i {
+  font-size: 36px;
+  color: #4f8dbf;
+}
+
+#toolbar-undo-redo {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.toolbar-undo-redo-item {
+  width: 20px;
+  height: 20px;
+  color: #848484;
+  cursor: pointer;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding: 12px;
+}
+
+.toolbar-undo-redo-item:hover {
+  background-color: #888;
+  color: #fff;
+}
+
+#toolbar-change-theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #c3c3c3;
+}
+
+#toolbar-change-theme i {
+  font-size: 32px;
+  color: #848484;
+}
+
+#toolbar-preview {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  color: #2f99b5;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+#toolbar-preview:hover {
+  background-color: #eef4fa;
+}
+
+#toolbar-preview i {
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+#toolbar-save-cv {
+  background-color: #2ecc71;
+  color: #fff;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+#toolbar-save-cv i {
+  font-size: 24px;
+}
+
+/* select box */
+
+.select-box {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  color: #60666d;
+}
+.select-box__current {
+  position: relative;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  outline: none;
+}
+.select-box__current:focus + .select-box__list {
+  opacity: 1;
+  animation-name: none;
+}
+.select-box__current:focus + .select-box__list .select-box__option {
+  cursor: pointer;
+}
+.select-box__current:focus .select-box__icon {
+  transform: translateY(-50%) rotate(180deg);
+}
+.select-box__icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 16px;
+  opacity: 0.3;
+  transition: 0.2s ease;
+}
+.select-box__value {
+  display: flex;
+}
+.select-box__input {
+  display: none;
+}
+.select-box__input:checked + .select-box__input-text {
+  display: block;
+}
+.select-box__input-text {
+  display: none;
+  width: 100%;
+  margin: 0;
+  padding: 4px 12px;
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+  font-size: 12px;
+}
+.select-box__list {
+  z-index: 9999;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  list-style: none;
+  opacity: 0;
+  animation-name: HideList;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: step-start;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+.select-box__option {
+  display: block;
+  padding: 4px 12px;
+  background-color: #fff;
+  font-size: 12px;
+}
+.select-box__option:hover,
+.select-box__option:focus {
+  color: #546c84;
+  background-color: #ebebeb;
+}
+
+@keyframes HideList {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}

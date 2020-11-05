@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dashboard</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
+    />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <script
+      src="https://kit.fontawesome.com/eb123fc88b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.13.0/beautify-html.js"></script>
+
+    <link href="/stylesheets/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/libs/night.css" />
+    <link rel="stylesheet" href="/libs/codemirror.css" />
+  </head>
+  <style>
+    .CodeMirror {
+      height: 620px;
+      flex: 1;
+    }
+    [contentEditable]:empty:before {
+      content: attr(cv-placeholder);
+      color: #9197a3;
+      pointer-events: none;
+      display: block;
+    }
+  </style>
+  <body>
+    <div
+      class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header closed-sidebar"
+    >
+      <div class="app-header header-shadow">
+        <div class="app-header__logo">
+          <div class="logo-src" style="height: 42px">
+            <img
+              src="https://beta.ketnoiviec.net/static/media/logo-main.2eda1ca0.svg"
+              alt=""
+              style="width: 42px"
+            />
+          </div>
+          <div class="header__pane ml-auto">
+            <div>
+              <button
+                type="button"
+                class="hamburger close-sidebar-btn hamburger--elastic"
+                data-class="closed-sidebar"
+              >
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="app-header__mobile-menu">
+          <div>
+            <button
+              type="button"
+              class="hamburger hamburger--elastic mobile-toggle-nav"
+            >
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="app-header__menu">
+          <span>
+            <button
+              type="button"
+              class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav"
+            >
+              <span class="btn-icon-wrapper">
+                <i class="fa fa-ellipsis-v fa-w-6"></i>
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="app-header__content">
+          <div class="app-header-left">
+            <div class="search-wrapper">
+              <div class="input-holder">
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Type to search"
+                />
+                <button class="search-icon"><span></span></button>
+              </div>
+              <button class="close"></button>
+            </div>
+          </div>
+          <div class="app-header-right"></div>
+        </div>
+      </div>
+
+      <div class="app-main">
+        <div class="app-sidebar sidebar-shadow">
+          <div class="app-header__logo" style="width: 42px">
+            <div class="logo-src">
+              <img
+                src="https://ketnoiviec.net/static/media/main.c5e8fa5c.svg"
+                style="width: 42px"
+                alt=""
+              />
+            </div>
+            <div class="header__pane ml-auto">
+              <div>
+                <button
+                  type="button"
+                  class="hamburger close-sidebar-btn hamburger--elastic"
+                  data-class="closed-sidebar"
+                >
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="app-header__mobile-menu">
+            <div>
+              <button
+                type="button"
+                class="hamburger hamburger--elastic mobile-toggle-nav"
+              >
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="app-header__menu">
+            <span>
+              <button
+                type="button"
+                class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav"
+              >
+                <span class="btn-icon-wrapper">
+                  <i class="fa fa-ellipsis-v fa-w-6"></i>
+                </span>
+              </button>
+            </span>
+          </div>
+          <div class="scrollbar-sidebar">
+            <div class="app-sidebar__inner">
+              <ul class="vertical-nav-menu">
+                <li class="app-sidebar__heading">Quản lý cv</li>
+                <li>
+                  <a href="/dashboard/tao-mau">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Tạo mẫu cv
+                  </a>
+                </li>
+                <li>
+                  <a href="/dashboard/them-mau">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    Thêm mẫu cv
+                  </a>
+                </li>
+                <li>
+                  <a href="/dashboard/quan-ly-mau">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    Quản lý mẫu cv
+                  </a>
+                </li>
+                <li class="app-sidebar__heading">Thống kê</li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    Thống kê lượng truy cập
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    Thông kê cv được tạo
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="app-main__outer">
+          <div class="app-main__inner">
+            <div class="card" style="margin-bottom: 16px">
+              <div
+                class="position-relative form-group"
+                style="padding: 16px 16px 0px 16px; display: flex"
+              >
+                <div style="flex: 1">
+                  <label for="title">Tiêu đề</label>
+                  <input id="title" class="form-control" />
+                </div>
+                <div id="image-preview" style="width: 826px; margin-left: 24px">
+                  <label for="image-url">Link ảnh</label>
+                  <input
+                    id="image-url"
+                    class="form-control"
+                    style="flex: 1; margin-right: 24px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div
+                class="tab-pane tabs-animation fade show active"
+                id="tab-content-0"
+                role="tabpanel"
+              >
+                <div style="display: flex">
+                  <div style="flex: 1">
+                    <div class="main-card card">
+                      <div class="card-body">
+                        <h5 class="card-title">Code CV</h5>
+
+                        <div class="position-relative form-group">
+                          <textarea
+                            name="text"
+                            id="cv-code"
+                            class="form-control"
+                            style="height: 640px"
+                          ></textarea>
+                        </div>
+
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <button id="btn-format" class="mt-1 btn btn-primary">
+                            Format code
+                          </button>
+                          <button id="save-theme" class="mt-1 btn btn-success">
+                            Lưu mẫu
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="margin-left: 24px">
+                    <div class="main-card mb-3 card">
+                      <div class="card-body">
+                        <h5 class="card-title">Xem Trước</h5>
+                        <div
+                          id="preview"
+                          style="
+                            padding: 8px;
+                            border: 1px dashed #0000002e;
+                            width: 800px;
+                            margin: auto;
+                            height: 673px;
+                            overflow: auto;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/javascripts/theme.js"></script>
+  </body>
+  <script src="/libs/codemirror.js"></script>
+  <script src="/libs/mode.js"></script>
+  <script src="/libs/formatting.js"></script>
+  <script>
+    (async () => {
+      document.querySelector("#title").focus();
+      const id = location.pathname.split("/").pop();
+      const theme = await axios({
+        method: "get",
+        url: `/api/theme/${id}`,
+      }).then((res) => res.data.theme);
+
+      document.getElementById("title").value = theme.title;
+      let htmlFormat = html_beautify(theme.html.replace(/\>\s+\</g, "><"), {
+        indent_size: 4,
+        indent_char: " ",
+        indent_level: 0,
+        indent_with_tabs: false,
+        preserve_newlines: false,
+        max_preserve_newlines: -1,
+        jslint_happy: false,
+        space_after_named_function: false,
+        space_after_anon_function: false,
+        keep_array_indentation: false,
+        keep_function_indentation: false,
+        space_before_conditional: true,
+        break_chained_methods: false,
+        eval_code: false,
+        unescape_strings: false,
+        wrap_line_length: 0,
+        indent_empty_lines: false,
+        templating: ["auto"],
+      });
+      document.getElementById("cv-code").value = htmlFormat;
+      document.getElementById("image-url").value = theme.image;
+
+      document.getElementById("preview").innerHTML = theme.html;
+
+      const editor = CodeMirror.fromTextArea(
+        document.getElementById("cv-code"),
+        {
+          lineNumbers: true,
+          theme: "night",
+          height: 900,
+          mode: "text/html",
+          lineWrapping: true,
+        }
+      );
+
+      editor.on("change", (e) => {
+        document.getElementById("preview").innerHTML = editor.getValue();
+      });
+      document.getElementById("btn-format").addEventListener("click", () => {
+        let htmlMinify = document
+          .getElementById("preview")
+          .innerHTML.replace(/\>\s+\</g, "><");
+        let htmlFormat = html_beautify(htmlMinify, {
+          indent_size: 4,
+          indent_char: " ",
+          indent_level: 0,
+          indent_with_tabs: false,
+          preserve_newlines: false,
+          max_preserve_newlines: -1,
+          jslint_happy: false,
+          space_after_named_function: false,
+          space_after_anon_function: false,
+          keep_array_indentation: false,
+          keep_function_indentation: false,
+          space_before_conditional: true,
+          break_chained_methods: false,
+          eval_code: false,
+          unescape_strings: false,
+          wrap_line_length: 0,
+          indent_empty_lines: false,
+          templating: ["auto"],
+        });
+        editor.setValue(htmlFormat);
+      });
+
+      document
+        .getElementById("save-theme")
+        .addEventListener("click", async () => {
+          axios({
+            url: `/api/theme/${id}`,
+            method: "put",
+            data: {
+              title: document.getElementById("title").value,
+              html: editor.getValue(),
+              image: document.getElementById("image-url").value,
+            },
+          });
+        });
+    })();
+  </script>
+</html>

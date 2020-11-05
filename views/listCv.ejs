@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tổng hợp mẫu CV</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/eb123fc88b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/listCv.css" />
+  </head>
+  <body>
+    <%- include('header'); -%>
+    <header>
+      <p class="title">Danh sách mãu CV xin việc</p>
+      <p class="sub">
+        Các mẫu CV đuợc thiết kế theo chuẩn, theo các ngành nghề. Phù hợp với
+        sinh viên và người đi làm.
+      </p>
+    </header>
+    <div class="list-cv">
+      <div style="width: 100%">
+        <div class="row">
+          <% themes.forEach(function(theme){ %>
+          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 card-cv-item">
+            <div class="wrap-image">
+              <img class="image-cv" src="<%= theme.image %>" alt="" />
+              <div class="overlay">
+                <div class="content-overlay">
+                  <div class="btn-link">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <a href="/viet-cv/<%= theme._id %>" class="link"
+                      >Dùng mẫu này</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="card-footer-item"><%= theme.title %></p>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <%- include('footer'); -%>
+  </body>
+</html>

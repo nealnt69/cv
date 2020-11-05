@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo CV</title>
+    <script
+      src="https://kit.fontawesome.com/eb123fc88b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/libs/bootstrap.min.css" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="/libs/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="/libs/jquery.ui.sortable-animation.js"></script>
+    <link href="/libs/cropper.css" rel="stylesheet" />
+    <script src="/libs/cropper.js"></script>
+  </head>
+
+  <body>
+    <%- include('header'); -%> <%- include('toolbar'); -%>
+
+    <div id="cv-layout-container">
+      <div id="cv-layout">
+        <div id="cv-title" contenteditable cv-placeholder="Tiêu đề CV"><%=title%></div>
+        <%- theme %>
+        <div id="cv-preview-save-detect"></div>
+      </div>
+
+      <div id="cv-tutorial">
+        <div id="cv-tutorial-title">Hướng dẫn viết cv</div>
+        <div id="cv-tutorial-content">
+          <p>Hướng dẫn</p>
+          <ol>
+            <li>Điền đầy đủ các thông tin hiển thị trong CV</li>
+            <li>Bấm nút <b>Lưu CV</b></li>
+            <li>Xem &amp; Tải CV về máy</li>
+          </ol>
+          <p>Một số lưu ý chung:</p>
+          <ul>
+            <li>Sắp xếp thời gian theo thứ tự mới -&gt; cũ.</li>
+            <li>
+              Ưu tiên những gì quan trọng, có liên quan đến vị trí ứng tuyển lên
+              đầu.
+            </li>
+            <li>Ngày tháng nên dùng: 01/2016, 01-2016 hoặc Jan 2016</li>
+          </ul>
+        </div>
+        <div class="cv-tutorial-text-example">Ví dụ</div>
+        <div id="cv-tutorial-wrap-example">
+          <div id="cv-tutorial-example">
+            <div style="text-align: center; color: #888888">
+              Hãy chọn mục để xem ví dụ hướng dẫn
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="cv-tutorial-example-detect"></div>
+    <div id="cv-element-child-detect"></div>
+    <div id="cv-undo-redo-detect"></div>
+    <div id="cv-change-theme-detect"></div>
+    <div id="cv-modal-empty-title">
+     <div class="wrapper">
+        <div class="cv-modal-empty-title-header">
+        <div class="cv-modal-empty-title-title">Bạn vui lòng nhập tiêu đề CV để quản lý dễ dàng hơn</div>
+      </div>
+      <div class="cv-modal-empty-title-body">
+        <span>
+          Ví dụ: CV Marketing, CV Lập trình PHP, CV ứng tuyển FPT..
+        </span>
+        <input type="text" id="cv-text-empty-titlte">
+      </div>
+      <div class="cv-modal-empty-title-footer">
+       <button id="cv-btn-cancel-title">Quay lại</button>
+       <button id="cv-btn-confirm-title">Tiếp tục</button>
+      </div>
+     </div>
+    </div>
+    <div id="cv-save-loading">
+       <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    <%- include('previewModal'); -%> <%- include('avatarModal'); -%> <%-
+    include('layoutModal'); -%> <%- include('themeModal'); -%> <%-
+    include('footer'); -%>
+  </body>
+  <script src="/javascripts/script.js"></script>
+
+  <script src="/javascripts/layout.js"></script>
+  <script src="/libs/hc-sticky.js"></script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xem CV</title>
+    <link rel="stylesheet" href="/stylesheets/previewCV.css" />
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+  </head>
+  <body>
+    <div id="data-pdf-url" data-pdf="<%= pdf %>"></div>
+    <canvas class="preview-cv"></canvas>
+  </body>
+  <script>
+    const pdfjsLib = window["pdfjs-dist/build/pdf"];
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "//mozilla.github.io/pdf.js/build/pdf.worker.js";
+
+    (async () => {
+      console.log(
+        document.getElementById("data-pdf-url").getAttribute("data-pdf")
+      );
+      const pdfDoc = await pdfjsLib.getDocument(
+        document.getElementById("data-pdf-url").getAttribute("data-pdf")
+      ).promise;
+
+      console.log(pdfDoc);
+    })();
+  </script>
+</html>

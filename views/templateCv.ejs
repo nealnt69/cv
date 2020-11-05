@@ -1,0 +1,545 @@
+<div id="cv-document">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    src="https://kit.fontawesome.com/eb123fc88b.js"
+    crossorigin="anonymous"
+  ></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    .cv-element {
+      margin: 24px;
+      border: 2px solid transparent;
+      padding: 12px;
+    }
+
+    .cv-element-title {
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    #cv-avatar-img {
+      width: 120px;
+      margin-right: 48px;
+    }
+
+    #cv-avatar-img:hover {
+      outline: 1px dashed #38bdfd;
+    }
+
+    #cv-container {
+      padding: 30px;
+    }
+
+    #cv-personal-information {
+    }
+
+    #cv-infomation {
+      flex: 1;
+    }
+
+    #cv-infomation-name {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.5;
+      color: #0e2452;
+      text-transform: capitalize;
+    }
+
+    #cv-infomation-position {
+      margin: 2px 0px;
+    }
+
+    .cv-infomation-text {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .cv-infomation-text:nth-of-type(2n + 1) {
+      font-weight: 700;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col-3 {
+      width: 20%;
+      min-width: 100px;
+    }
+
+    .col-9 {
+      width: 80%;
+      padding: 0;
+    }
+
+    .cv-element-title {
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 2px;
+    }
+
+    #cv-objectives-content {
+    }
+
+    .col-4 {
+      width: 30%;
+      display: flex;
+      flex-wrap: wrap;
+      align-self: baseline;
+      padding-left: 0px;
+    }
+
+    .col-8 {
+      flex: 1;
+    }
+
+    .cv-education-element {
+      display: flex;
+    }
+
+    .cv-education-start,
+    .cv-education-end {
+      font-size: 14px;
+    }
+
+    .cv-experience-element {
+      display: flex;
+    }
+
+    .cv-activity-element {
+      display: flex;
+    }
+
+    .cv-prize-element {
+      display: flex;
+    }
+
+    .cv-certificate-element {
+      display: flex;
+    }
+
+    .cv-skill-element {
+      display: flex;
+    }
+
+    .cv-project-element {
+      display: flex;
+    }
+  </style>
+  <div id="cv-container" lang="vi">
+    <div id="cv-personal-information" class="cv-element">
+      <div style="display: flex">
+        <div id="cv-avatar" data-toggle="modal" data-target="#avatar-modal">
+          <img
+            src="https://www.topcv.vn/upload/images/avatars/no_avatar_3_4.jpg"
+            alt=""
+            id="cv-avatar-img"
+            value=""
+          />
+        </div>
+        <div id="cv-infomation">
+          <div
+            id="cv-infomation-name"
+            contenteditable=""
+            cv-placeholder="Tên của bạn"
+          ></div>
+          <div
+            id="cv-infomation-position"
+            contenteditable=""
+            cv-placeholder="Công việc bạn mong muốn"
+          ></div>
+          <div class="row">
+            <div class="col-3 cv-infomation-text" id="cv-birthday-title">
+              Ngày sinh:
+            </div>
+            <div
+              class="col-9 cv-infomation-text"
+              contenteditable=""
+              cv-form-field="true"
+              cv-placeholder="Ngày sinh (không bắt buộc)"
+              id="cv-infomation-birthday"
+            ></div>
+          </div>
+          <div class="row">
+            <div class="col-3 cv-infomation-text" id="cv-gender-title">
+              Giới tính:
+            </div>
+            <div
+              class="col-9 cv-infomation-text"
+              contenteditable=""
+              cv-placeholder="Giới tính (không bắt buộc)"
+              id="cv-infomation-gender"
+            ></div>
+          </div>
+          <div class="row">
+            <div class="col-3 cv-infomation-text" id="cv-phone-title">
+              Điện thoại:
+            </div>
+            <div
+              class="col-9 cv-infomation-text"
+              contenteditable=""
+              cv-placeholder="Số điện thoại"
+              id="cv-infomation-phonenumber"
+            ></div>
+          </div>
+          <div class="row">
+            <div class="col-3 cv-infomation-text" id="cv-email-title">
+              Email:
+            </div>
+            <div
+              class="col-9 cv-infomation-text"
+              contenteditable=""
+              cv-placeholder="Địa chỉ email"
+              id="cv-infomation-email"
+            ></div>
+          </div>
+          <div class="row">
+            <div class="col-3 cv-infomation-text" id="cv-address-title">
+              Địa chỉ:
+            </div>
+            <div
+              class="col-9 cv-infomation-text"
+              contenteditable=""
+              cv-placeholder="Địa chỉ hiện tại"
+              id="cv-infomation-address"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cv-block-drag-drop">
+      <div id="cv-objectives" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-objectives-title"
+        >
+          Mục tiêu nghề nghiệp
+        </div>
+        <div
+          id="cv-objectives-content"
+          contenteditable=""
+          cv-placeholder="Mục tiêu nghề nghiệp: ngắn hạn, dài hạn"
+        ></div>
+      </div>
+      <div id="cv-education" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-education-title"
+        >
+          Học vấn
+        </div>
+        <div class="cv-education-element cv-child-element">
+          <div class="col-4 cv-element-time-duration">
+            <div
+              class="cv-education-start"
+              contenteditable=""
+              cv-placeholder="Bắt đầu"
+            ></div>
+            &nbsp;-&nbsp;
+            <div
+              class="cv-education-end"
+              contenteditable=""
+              cv-placeholder="Kết thúc"
+            ></div>
+          </div>
+          <div class="col-8 cv-element-content">
+            <div
+              class="cv-education-school"
+              contenteditable=""
+              cv-placeholder="Tên trường học"
+            ></div>
+            <div
+              class="cv-education-subject"
+              contenteditable=""
+              cv-placeholder="Ngành học / Môn học"
+            ></div>
+            <div
+              class="cv-education-description"
+              contenteditable=""
+              cv-placeholder="Mô tả chi tiết"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="cv-experience" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-experience-title"
+        >
+          Kinh nghiệm làm việc
+        </div>
+        <div class="cv-experience-element cv-child-element">
+          <div class="col-4 cv-element-time-duration">
+            <div
+              class="cv-experience-start"
+              contenteditable=""
+              cv-placeholder="Bắt đầu"
+            ></div>
+            &nbsp;-&nbsp;
+            <div
+              class="cv-experience-end"
+              contenteditable=""
+              cv-placeholder="Kết thúc"
+            ></div>
+          </div>
+          <div class="col-8 cv-element-content">
+            <div
+              class="cv-experience-name"
+              contenteditable=""
+              cv-placeholder="Tên công ty"
+            ></div>
+            <div
+              class="cv-experience-position"
+              contenteditable=""
+              cv-placeholder="Vị trí công việc"
+            ></div>
+            <div
+              class="cv-experience-description"
+              contenteditable=""
+              cv-placeholder="Mô tả chi tiết công việc, những gì đạt được trong quá trình làm việc"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="cv-activity" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-activity-title"
+        >
+          Hoạt động
+        </div>
+        <div class="cv-activity-element cv-child-element">
+          <div class="col-4 cv-element-time-duration">
+            <div
+              class="cv-activity-start"
+              contenteditable=""
+              cv-placeholder="Bắt đầu"
+            ></div>
+            &nbsp;-&nbsp;
+            <div
+              class="cv-activity-end"
+              contenteditable=""
+              cv-placeholder="Kết thúc"
+            ></div>
+          </div>
+          <div class="col-8 cv-element-content">
+            <div
+              class="cv-activity-name"
+              contenteditable=""
+              cv-placeholder="Tên tổ chức"
+            ></div>
+            <div
+              class="cv-activity-position"
+              contenteditable=""
+              cv-placeholder="Vị trí tham gia"
+            ></div>
+            <div
+              class="cv-activity-description"
+              contenteditable=""
+              cv-placeholder="Mô tả chi tiết các hoạt động đã tham gia"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="cv-prize" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-prize-title"
+        >
+          Giải thưởng
+        </div>
+        <div class="cv-prize-element cv-child-element">
+          <div class="col-4 cv-element-time-duration">
+            <div
+              class="cv-prize-time"
+              contenteditable=""
+              cv-placeholder="Ngày nhận giải"
+            ></div>
+          </div>
+          <div class="col-8 cv-element-content">
+            <div
+              class="cv-prize-description"
+              contenteditable=""
+              cv-placeholder="Tên giải thưởng"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="cv-more-infomation" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-more-infomation-title"
+        >
+          Thông tin thêm
+        </div>
+        <div
+          id="cv-more-infomation-content"
+          contenteditable=""
+          cv-placeholder="Điền các thông tin khác nếu có"
+        ></div>
+      </div>
+      <div id="cv-certificate" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-certificate-title"
+        >
+          Chứng chỉ
+        </div>
+        <div class="cv-certificate-element cv-child-element">
+          <div class="col-4">
+            <div
+              class="cv-certificate-time"
+              contenteditable=""
+              cv-placeholder="Năm"
+            ></div>
+          </div>
+          <div class="col-8 cv-element-content">
+            <div
+              class="cv-certificate-name"
+              contenteditable=""
+              cv-placeholder="Tên chứng chỉ"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="cv-skill" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-skill-title"
+        >
+          Kỹ năng
+        </div>
+        <div class="cv-skill-element cv-child-element">
+          <div class="col-4">
+            <div
+              class="cv-skill-name"
+              contenteditable=""
+              cv-placeholder="Tên kỹ năng"
+            ></div>
+          </div>
+          <div class="col-8 cv-element-content">
+            <div
+              class="cv-skill-value"
+              contenteditable=""
+              cv-placeholder="Kỹ năng"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="cv-favorite" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-favorite-title"
+        >
+          Sở thích
+        </div>
+        <div
+          id="cv-favorite-content"
+          contenteditable=""
+          cv-placeholder="Nói ngắn gọn về sở thích của cá nhân"
+        ></div>
+      </div>
+      <div id="cv-reference" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-reference-title"
+        >
+          Người tham chiếu
+        </div>
+        <div class="cv-reference-element cv-child-element">
+          <div class="cv-element-content">
+            <div
+              class="cv-reference-name"
+              contenteditable=""
+              cv-placeholder="Tên người tham chiếu"
+            ></div>
+            <div
+              class="cv-reference-position"
+              contenteditable=""
+              cv-placeholder="Vị trí hiện tại"
+            ></div>
+            <div
+              class="cv-reference-email"
+              contenteditable=""
+              cv-placeholder="Địa chi email"
+            ></div>
+            <div
+              class="cv-reference-phonenumber"
+              contenteditable=""
+              cv-placeholder="Số điện thoại"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="cv-project" class="cv-element">
+        <div
+          class="cv-element-title"
+          contenteditable=""
+          cv-placeholder="TIÊU ĐỀ MỤC LỚN"
+          id="cv-project-title"
+        >
+          Dự án
+        </div>
+        <div class="cv-project-element cv-child-element">
+          <div class="col-4 cv-element-time-duration">
+            <div
+              class="cv-project-start"
+              contenteditable=""
+              cv-placeholder="Bắt đầu"
+            ></div>
+            &nbsp;-&nbsp;
+            <div
+              class="cv-project-end"
+              contenteditable=""
+              cv-placeholder="Kết thúc"
+            ></div>
+          </div>
+          <div class="col-8 cv-element-content">
+            <div
+              class="cv-project-name"
+              contenteditable=""
+              cv-placeholder="Tên dự án"
+            ></div>
+            <div
+              class="cv-project-position"
+              contenteditable=""
+              cv-placeholder="Vị trí tham gia"
+            ></div>
+            <div
+              class="cv-project-description"
+              contenteditable=""
+              cv-placeholder="Mô tả chi tiết"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

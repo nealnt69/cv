@@ -1,0 +1,37 @@
+{
+  "name": "knv-cv",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.784.0",
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "cheerio": "^1.0.0-rc.3",
+    "codemirror": "^5.58.2",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "cropperjs": "^1.5.9",
+    "data-uri-to-buffer": "^3.0.1",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "~4.16.1",
+    "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "jspdf": "^2.1.1",
+    "mongoose": "^5.10.11",
+    "morgan": "~1.9.1",
+    "path": "^0.12.7",
+    "pdf-lib": "^1.11.2",
+    "puppeteer": "^5.3.1",
+    "sharp": "^0.26.2",
+    "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
